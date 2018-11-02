@@ -1,29 +1,55 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div class="menubar">
+      <ul>
+        <li>File</li>
+        </ul>
+      </div>
+    <terminal-window />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
-
+import { Component, Vue } from "vue-property-decorator";
+import Terminal from "./components/Terminal.vue";
 @Component({
   components: {
-    HelloWorld,
-  },
+    "terminal-window": Terminal
+  }
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("/SourceSansPro-Light.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("/SourceSansPro-SemiBold.ttf");
+  font-weight: 600;
+}
+html,
+body,
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #1f1f1f;
+  padding: 0;
+  margin: 0;
+}
+
+.menubar {
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 10px;
+      color: white;
+      font-family: 'Source Sans Pro';
+    }
+  }
+  width: 100%;
+  background-color: #2f2f2f;
 }
 </style>
